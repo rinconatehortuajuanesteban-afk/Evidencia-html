@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto Tailwind</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-green-100 flex items-center justify-center min-h-screen">
+
+  <div class="relative w-[600px] h-[350px]">
+
+    <!-- Lado izquierdo (azul) -->
+    <div class="absolute left-0 top-0 h-full border-l-[12px] border-blue-900"></div>
+
+    <!-- Parte inferior (celeste) -->
+    <div class="absolute bottom-0 left-0 w-full border-b-[4px] border-cyan-400"></div>
+
+    <!-- Parte superior (doble línea amarilla) -->
+    <div class="absolute top-0 left-0 w-full border-t-[6px] border-yellow-500"></div>
+    <div class="absolute top-[10px] left-0 w-full border-t-[6px] border-yellow-600"></div>
+
+    <!-- Lado derecho (línea punteada morada) -->
+    <div class="absolute right-0 top-0 h-full border-r-[8px] border-purple-700 border-dashed"></div>
+
+  </div>
+
+</body>
+</html>
