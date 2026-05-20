@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 600px;
+    background-color: white;
+    border: 1px solid rgb(185, 185, 185);
+}
+
+/* ===== HORAS ===== */
+
+.horas{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+    border-right: 2px dashed rgb(185, 185, 185);
+}
+
+.titulo{
+    padding: 20px;
+    border-bottom: 1px solid rgb(185, 185, 185);
+    font-weight: bold;
+}
+
+.hora{
+    height: 85px;
+    border-top: 1px solid rgb(185, 185, 185);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== DIAS ===== */
+
+.dias{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.dia{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-left: 1px solid rgb(185, 185, 185);
+}
+
+.encabezado-dia{
+    height: 60px;
+    border-bottom: 1px solid rgb(185, 185, 185);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+.bloque{
+    height: 85px;
+    border-top: 1px solid rgb(185, 185, 185);
+    padding: 5px;
+}
+
+.clase{
+    background-color: #dbeafe;
+    border: 1px solid #93c5fd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}

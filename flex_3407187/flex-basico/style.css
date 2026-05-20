@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    display: flex;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+
+    align-items: start;
+
+    width: 80%;
+    height: 400px;
+    background-color: #fff;
+    border: 5px black solid;   
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    border: 2px black dashed;
+    margin: 10px;
+}
