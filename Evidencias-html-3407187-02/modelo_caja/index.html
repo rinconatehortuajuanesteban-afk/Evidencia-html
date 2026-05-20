@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordes CSS</title>
+
+    <style>
+        .padre {
+            background-color: skyblue;
+            width: 400px;
+            height: auto;
+            padding: 30px 20px 5px 0px;
+            border: 10px double rgb(216, 91, 189);
+            box-sizing: border-box;
+            margin-top: 20px;
+            margin-left: 10px;
+            border-radius: 20px;
+            box-shadow: 10px 5px 5px rgb(54, 29, 29);
+        }
+
+        .hijo {
+            background-color: cadetblue;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            margin-bottom: 50px;
+            margin-left: auto;
+            margin-right: auto;
+
+            /* Diferentes tipos de borde */
+            border-top: 8px solid red;
+            border-right: 8px dashed green;
+            border-bottom: 8px dotted blue;
+            border-left: 8px double purple;
+            border-radius: 20px;
+
+            box-sizing: border-box;
+        }
+        .hijo2 {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="padre">
+        <div class="hijo">hijo</div>
+        <div class="hijo hijo2">hijo</div>
+        <div class="hijo">hijo</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+        @font-face {
+            font-family: "Inter"; 
+            src: url(inter/Inter.ttf); format: ("truetype");
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+         }
+
+              @font-face {
+            font-family: "Inter"; 
+            src: url(inter/Inter.ttf); format: ("truetype");
+            font-style: bold;
+            font-weight: 700;
+            font-display: swap;
+         }
+        
+         *{
+        padding: 0;
+        margin: 0;
+        }
+        
+        body {
+            background-color: #E5E6E8;
+            font-family: "Inter", sans-serif;
+        }
+       
+        .card{
+            width: 300px;
+            display:block;
+            height: 400px;
+            background-color:#fff;
+            margin: 20px auto;
+        }
+
+        .card__company{
+            display: block;
+            width: auto;
+            height: 100px;
+            background-color: #404042;
+        }
+
+        .card__flag{
+            display: block;
+            width: auto;
+            height: 50px;
+            background-color: #7acbc7;
+        }
+
+        .card__image {
+        display: block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: white solid 5px;
+        margin-top: -90px;    
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        .card__nombre{
+            text-align: center;
+            letter-spacing: 3px;
+            margin-top: 20px;
+        }
+
+        .card__nombre--negrita{
+            font-weight: bold;
+        }
+
+        .card__profesion{
+            text-align: center;
+            color: #7acbc7;
+            font-size: 8px;
+            letter-spacing: 2px;
+            margin-top: 0%;
+        }
+
+        .card__tabla{
+            display: block;
+            width: 55%;
+            height: auto;
+            margin: 20px auto;
+            font-family: 8px;
+            font-size: 8px;
+        }
+
+        .card__tabla--celda{
+            padding-bottom: 5px;
+            padding-right: 5px;
+        }
+
+        .card__tabla--atributo{
+            font-weight: bold;
+            color: #7acbc7;
+        }
+
+
+    </style>
+</body>
+<div class="card">
+    <div class="card__company"></div>
+    <div class="card__flag"></div>
+    <img class="card__image" src="imagen.jpg" alt="">
+    <p class="card__nombre">
+       Anna <span class="card__nombre--negrita">Anderson</span>
+    </p>
+    <p class="card__profesion">
+        Web Desing & Developer
+    </p>
+    <table class="card__tabla">
+        <tr>
+            <td class="card__tabla--celda
+            card__tabla--atributo">
+                Documeto</td>
+            <td class="card__tabla--celda">1234567</td>
+        </tr>
+        <tr>
+            <td class="card__tabla--celda
+            card__tabla--atributo">
+                Correo</td>
+            <td class="card__tabla--celda">Anna.anderson@example.com</td>
+        </tr>
+        <tr>
+            <td class="card__tabla--celda
+            card__tabla--atributo">
+                Celular</td>
+            <td class="card__tabla--celda">123-456-7890</td>
+        </tr>
+    </table>
+
+</div>
+</html>
