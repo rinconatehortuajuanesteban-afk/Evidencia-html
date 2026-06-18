@@ -1,0 +1,174 @@
+body{
+    font-family: Verdana;
+    background-color: #f5f7fa;
+    color: #51565d;
+    padding: 110px 0 60px 0;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    max-width: 1200px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.month{
+    text-align: center;
+    font-weight: 400;
+    padding: 30px 0;
+}
+
+.days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 70px;
+    border-bottom: 1px solid #a6a8b31f;
+    border-top: 1px solid #a6a8b31f;
+    place-items: center;
+}
+
+.schedule{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 120px;
+}
+
+.schedule__days{
+    border-bottom: 1px solid #a6a8b31f;
+    border-right: 1px solid #a6a8b31f;
+    padding: 14px 20px; 
+}
+
+/** estilos del header: menu, logos, etc..**/
+
+.main-header{
+    width: 100%;
+    background-color: #fff;
+
+    /* el menu fijo en una posicion */
+    position: fixed;
+    
+    /* posiciones x, y de origen */
+    top: 0; /* y */
+    left: 0; /* x */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/** el menu de navegacion **/
+.main-header__container{
+    width: 90%;
+    margin: 0 auto;
+    height: 70px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header__logo{
+    font-weight: 700;
+}
+
+/** lista de opciones **/
+.main-nav__list{
+    list-style: none;
+    display: flex;
+    
+    /** espacio entre pixeles **/
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav__link{
+    text-decoration: none;
+    color: #51565d;
+    font-size: 1rem;
+}
+
+.main-nav__link:hover{
+    color: rgb(177, 61, 61);
+}
+
+/** boton hamburguesa: toggle **/
+.main-header__toggle{
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-header__bar{
+    width: 100%;
+    height: 3px;
+    background-color: #51565d;
+    border-radius: 2px;
+
+}
+
+/**media-query adaptacion de estilo**/
+
+@media screen and (max-width: 768px){
+    .schedule__days{
+        color: blue;
+    }   
+}
+
+@media screen and (max-width: 500px) {
+    .schedule__days{
+        color: red;
+    }
+
+    .container{
+        width: 97%;
+    }
+
+    .schedule__days{
+        padding: 7px 5px;
+        text-align: center;
+    }
+    
+    /** poner visible el boton **/
+   .main-header__toggle{
+     display: flex;
+   }
+
+   /** bajar el menu de opciones **/
+   .main-nav{
+    position: absolute;
+
+    /** coordenadas **/
+    left: 0;
+    top: 70px;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+    /** estilos para ocultar **/
+    max-height: 0;
+    overflow: hidden;
+   }
+
+   /** organizar el menu: vertical **/
+   .main-nav__list{
+    flex-direction: column;
+    gap: 0;
+   }
+
+   .main-nav__item{
+    border-top: 1px solid #a6a8b31f;
+    padding: 15px 20px;
+   }
+
+   /** clase activa: boton toggle **/
+   .main-nav__open{
+    max-height: 200px;
+   }
+
+}

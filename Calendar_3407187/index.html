@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- menu responsive-->
+    <div class="main-header">
+        <div class="main-header__container">
+            <!--logo-->
+            <div class="main-header__logo">
+                Mis Eventos
+            </div>
+            <!--boton hamburguesa-->
+            <button class="main-header__toggle" id="menu-toggle">
+                <div class="main-header__bar"></div>
+                <div class="main-header__bar"></div>
+                <div class="main-header__bar"></div>
+            </button>
+            <!--barra de navegacion-->
+            <nav class="main-nav" id="main-nav">
+                <ul class="main-nav__list">
+                    <li class="main-nav__item">
+                        <a class="main-nav__link" href="#">Buscar</a>
+                    </li>
+                    
+                    <li class="main-nav__item">
+                        <a class="main-nav__link" href="#">Ayuda</a>
+                    </li>
+                    
+                    <li class="main-nav__item">
+                        <a class="main-nav__link" href="#">Configuracion</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="month">
+            June
+        </div>
+        <div class="days">
+            <div class="days__item">Mon</div>
+            <div class="days__item">Tue</div>
+            <div class="days__item">Wed</div>
+            <div class="days__item">Thu</div>
+            <div class="days__item">Fri</div>
+            <div class="days__item">Sat</div>
+            <div class="days__item">Sun</div>
+        </div>
+        <div class="schedule"> 
+            <div class="schedule__days">1</div>
+            <div class="schedule__days">2</div>
+            <div class="schedule__days">3</div>
+            <div class="schedule__days">4</div>
+            <div class="schedule__days">5</div>
+            <div class="schedule__days">6</div>
+            <div class="schedule__days">7</div>
+            <div class="schedule__days">8</div>
+            <div class="schedule__days">9</div>
+            <div class="schedule__days">10</div>
+            <div class="schedule__days">11</div>
+            <div class="schedule__days">12</div>
+            <div class="schedule__days">13</div>
+            <div class="schedule__days">14</div>
+            <div class="schedule__days">15</div>
+            <div class="schedule__days">16</div>
+            <div class="schedule__days">17</div>
+            <div class="schedule__days">18</div>
+            <div class="schedule__days">19</div>
+            <div class="schedule__days">20</div>
+            <div class="schedule__days">21</div>
+            <div class="schedule__days">22</div>
+            <div class="schedule__days">23</div>
+            <div class="schedule__days">24</div>
+            <div class="schedule__days">25</div>
+            <div class="schedule__days">26</div>
+            <div class="schedule__days">27</div>
+            <div class="schedule__days">28</div>
+            <div class="schedule__days">29</div>
+            <div class="schedule__days">30</div>
+        </div>
+    </div>
+    <script>
+        const menuToggle = document.getElementById("menu-toggle")
+        console.log(menuToggle)
+        const mainNav = document.getElementById("main-nav")
+        console.log(mainNav)
+
+        //evento click del boton//
+        menuToggle.addEventListener('click', function(){
+            mainNav.classList.toggle("main-nav__open")})
+
+        
+    </script>
+</body>
+</html>
