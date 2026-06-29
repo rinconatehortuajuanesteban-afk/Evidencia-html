@@ -1,104 +1,91 @@
+
+/* ==================================================
+   ESTILOS GENERALES
+================================================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    font-family: Verdana;
+    font-family: Verdana, sans-serif;
     background-color: #f5f7fa;
     color: #51565d;
     padding: 110px 0 60px 0;
 }
 
-.container{
-    width: 90%;
-    margin: 0 auto;
-    background-color: white;
-    max-width: 1200px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
 
-.month{
-    text-align: center;
-    font-weight: 400;
-    padding: 30px 0;
-}
-
-.days{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    height: 70px;
-    border-bottom: 1px solid #a6a8b31f;
-    border-top: 1px solid #a6a8b31f;
-    place-items: center;
-}
-
-.schedule{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows: 120px;
-}
-
-.schedule__days{
-    border-bottom: 1px solid #a6a8b31f;
-    border-right: 1px solid #a6a8b31f;
-    padding: 14px 20px; 
-}
-
-/** estilos del header: menu, logos, etc..**/
+/* ==================================================
+   HEADER
+================================================== */
 
 .main-header{
     width: 100%;
-    background-color: #fff;
+    background-color: #ffffff;
 
-    /* el menu fijo en una posicion */
     position: fixed;
-    
-    /* posiciones x, y de origen */
-    top: 0; /* y */
-    left: 0; /* x */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/** el menu de navegacion **/
 .main-header__container{
     width: 90%;
-    margin: 0 auto;
+    max-width: 1200px;
     height: 70px;
+    margin: 0 auto;
 
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
 .main-header__logo{
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
-/** lista de opciones **/
+
+/* ==================================================
+   MENÚ DE NAVEGACIÓN
+================================================== */
+
 .main-nav__list{
     list-style: none;
+
     display: flex;
-    
-    /** espacio entre pixeles **/
     gap: 30px;
-    margin: 0;
-    padding: 0;
 }
 
 .main-nav__link{
     text-decoration: none;
     color: #51565d;
     font-size: 1rem;
+
+    transition: 0.3s;
 }
 
 .main-nav__link:hover{
     color: rgb(177, 61, 61);
 }
 
-/** boton hamburguesa: toggle **/
+
+/* ==================================================
+   BOTÓN HAMBURGUESA
+================================================== */
+
 .main-header__toggle{
     width: 30px;
     height: 20px;
+
     background: transparent;
     border: none;
+    cursor: pointer;
+
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -107,68 +94,260 @@ body{
 .main-header__bar{
     width: 100%;
     height: 3px;
-    background-color: #51565d;
-    border-radius: 2px;
 
+    background-color: #51565d;
+    border-radius: 3px;
 }
 
-/**media-query adaptacion de estilo**/
+
+/* ==================================================
+   PANEL DE EVENTOS
+================================================== */
+
+.event-panel{
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 20px auto;
+    padding: 20px;
+
+    background-color: white;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.event-panel h3{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.event-panel label{
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.event-panel input,
+.event-panel textarea,
+.event-panel select{
+    padding: 10px;
+
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+
+    font-size: 0.9rem;
+}
+
+.event-panel textarea{
+    width: 250px;
+    height: 70px;
+    resize: vertical;
+}
+
+.event-panel button{
+    padding: 10px 20px;
+
+    background-color: #4a7cff;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.event-panel button:hover{
+    background-color: #2f62eb;
+}
+
+
+/* ==================================================
+   CONTENEDOR DEL CALENDARIO
+================================================== */
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   TÍTULO DEL MES
+================================================== */
+
+.month{
+    padding: 30px 0;
+
+    text-align: center;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+/* ==================================================
+   DÍAS DE LA SEMANA
+================================================== */
+
+.days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    height: 70px;
+
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+
+    place-items: center;
+}
+
+.days__item{
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   CUADRÍCULA DEL CALENDARIO
+================================================== */
+
+.schedule{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 120px;
+}
+
+.schedule__days{
+    padding: 15px;
+
+    border-right: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+
+    overflow-y: auto;
+}
+
+
+/* ==================================================
+   NÚMERO DEL DÍA
+================================================== */
+
+.day-number{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* ==================================================
+   EVENTOS
+================================================== */
+
+.event{
+    background-color: #4a7cff;
+    color: white;
+
+    padding: 6px;
+    margin-bottom: 5px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+}
+
+.event-title{
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.event-time{
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+.event-description{
+    margin-top: 3px;
+}
+
+
+/* ==================================================
+   RESPONSIVE TABLET
+================================================== */
 
 @media screen and (max-width: 768px){
+
     .schedule__days{
-        color: blue;
-    }   
+        padding: 10px;
+    }
+
 }
 
-@media screen and (max-width: 500px) {
-    .schedule__days{
-        color: red;
-    }
+
+/* ==================================================
+   RESPONSIVE MÓVIL
+================================================== */
+
+@media screen and (max-width: 500px){
 
     .container{
         width: 97%;
     }
 
     .schedule__days{
-        padding: 7px 5px;
+        padding: 5px;
         text-align: center;
     }
-    
-    /** poner visible el boton **/
-   .main-header__toggle{
-     display: flex;
-   }
 
-   /** bajar el menu de opciones **/
-   .main-nav{
-    position: absolute;
+    /* Mostrar botón hamburguesa */
+    .main-header__toggle{
+        display: flex;
+    }
 
-    /** coordenadas **/
-    left: 0;
-    top: 70px;
-    background-color: white;
-    width: 100%;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    /* Menú desplegable */
+    .main-nav{
+        position: absolute;
 
-    /** estilos para ocultar **/
-    max-height: 0;
-    overflow: hidden;
-   }
+        top: 70px;
+        left: 0;
 
-   /** organizar el menu: vertical **/
-   .main-nav__list{
-    flex-direction: column;
-    gap: 0;
-   }
+        width: 100%;
 
-   .main-nav__item{
-    border-top: 1px solid #a6a8b31f;
-    padding: 15px 20px;
-   }
+        background-color: white;
 
-   /** clase activa: boton toggle **/
-   .main-nav__open{
-    max-height: 200px;
-   }
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease;
+    }
+
+    .main-nav__open{
+        max-height: 250px;
+    }
+
+    .main-nav__list{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-nav__item{
+        padding: 15px 20px;
+        border-top: 1px solid #e8e8e8;
+    }
 
 }

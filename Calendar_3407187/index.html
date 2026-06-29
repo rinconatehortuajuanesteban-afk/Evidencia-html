@@ -1,52 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
+
 <head>
+    <!-- Configuración básica -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>Calendario de Eventos</title>
+
+
+<!-- Hojas de estilo -->
+<link rel="stylesheet" href="normalize.css">
+<link rel="stylesheet" href="styles.css">
+
+
 </head>
+
 <body>
-<!-- menu responsive-->
-    <div class="main-header">
-        <div class="main-header__container">
-            <!--logo-->
-            <div class="main-header__logo">
-                Mis Eventos
-            </div>
-            <!--boton hamburguesa-->
-            <button class="main-header__toggle" id="menu-toggle">
-                <div class="main-header__bar"></div>
-                <div class="main-header__bar"></div>
-                <div class="main-header__bar"></div>
-            </button>
-            <!--barra de navegacion-->
-            <nav class="main-nav" id="main-nav">
-                <ul class="main-nav__list">
-                    <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">Buscar</a>
-                    </li>
-                    
-                    <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">Ayuda</a>
-                    </li>
-                    
-                    <li class="main-nav__item">
-                        <a class="main-nav__link" href="#">Configuracion</a>
-                    </li>
-                </ul>
-            </nav>
+
+
+<!-- ================= HEADER ================= -->
+<header class="main-header">
+
+    <div class="main-header__container">
+
+        <!-- Logo -->
+        <div class="main-header__logo">
+            Mis Eventos
         </div>
+
+        <!-- Botón hamburguesa -->
+        <button
+            class="main-header__toggle"
+            id="menu-toggle"
+            aria-label="Abrir menú">
+
+            <div class="main-header__bar"></div>
+            <div class="main-header__bar"></div>
+            <div class="main-header__bar"></div>
+        </button>
+
+        <!-- Navegación -->
+        <nav class="main-nav" id="main-nav">
+
+            <ul class="main-nav__list">
+
+                <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">
+                        Buscar
+                    </a>
+                </li>
+
+                <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">
+                        Ayuda
+                    </a>
+                </li>
+
+                <li class="main-nav__item">
+                    <a class="main-nav__link" href="#">
+                        Configuración
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
     </div>
 
+</header>
 
+<!-- ================= CONTENIDO PRINCIPAL ================= -->
+<main>
 
-    <div class="container">
+    <!-- Panel de eventos -->
+    <section class="event-panel">
+
+        <h3>Agregar Evento</h3>
+
+        <!-- Día -->
+        <label for="eventDay">Día</label>
+
+        <select id="eventDay" name="eventDay">
+            <option value="">Seleccionar día</option>
+
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+        </select>
+
+        <!-- Nombre -->
+        <label for="eventTitle">
+            Nombre del evento
+        </label>
+
+        <input
+            type="text"
+            id="eventTitle"
+            name="eventTitle"
+            placeholder="Nombre del evento">
+
+        <!-- Hora -->
+        <label for="eventTime">
+            Hora
+        </label>
+
+        <input
+            type="time"
+            id="eventTime"
+            name="eventTime">
+
+        <!-- Descripción -->
+        <label for="eventDescription">
+            Descripción
+        </label>
+
+        <textarea
+            id="eventDescription"
+            name="eventDescription"
+            placeholder="Descripción"></textarea>
+
+        <!-- Categoría -->
+        <label for="eventIcon">
+            Categoría
+        </label>
+
+        <select id="eventIcon" name="eventIcon">
+            <option value="📚">📚 Estudio</option>
+            <option value="💼">💼 Trabajo</option>
+            <option value="🎉">🎉 Fiesta</option>
+            <option value="⚽">⚽ Deporte</option>
+            <option value="🏥">🏥 Salud</option>
+            <option value="✈️">✈️ Viaje</option>
+            <option value="❤️">❤️ Personal</option>
+        </select>
+
+        <!-- Botón -->
+        <button id="addEvent">
+            Agregar Evento
+        </button>
+
+    </section>
+
+    <!-- Calendario -->
+    <section class="container">
+
+        <!-- Mes -->
         <div class="month">
-            June
+            Junio
         </div>
+
+        <!-- Días de la semana -->
         <div class="days">
+
             <div class="days__item">Mon</div>
             <div class="days__item">Tue</div>
             <div class="days__item">Wed</div>
@@ -54,51 +188,228 @@
             <div class="days__item">Fri</div>
             <div class="days__item">Sat</div>
             <div class="days__item">Sun</div>
+
         </div>
-        <div class="schedule"> 
-            <div class="schedule__days">1</div>
-            <div class="schedule__days">2</div>
-            <div class="schedule__days">3</div>
-            <div class="schedule__days">4</div>
-            <div class="schedule__days">5</div>
-            <div class="schedule__days">6</div>
-            <div class="schedule__days">7</div>
-            <div class="schedule__days">8</div>
-            <div class="schedule__days">9</div>
-            <div class="schedule__days">10</div>
-            <div class="schedule__days">11</div>
-            <div class="schedule__days">12</div>
-            <div class="schedule__days">13</div>
-            <div class="schedule__days">14</div>
-            <div class="schedule__days">15</div>
-            <div class="schedule__days">16</div>
-            <div class="schedule__days">17</div>
-            <div class="schedule__days">18</div>
-            <div class="schedule__days">19</div>
-            <div class="schedule__days">20</div>
-            <div class="schedule__days">21</div>
-            <div class="schedule__days">22</div>
-            <div class="schedule__days">23</div>
-            <div class="schedule__days">24</div>
-            <div class="schedule__days">25</div>
-            <div class="schedule__days">26</div>
-            <div class="schedule__days">27</div>
-            <div class="schedule__days">28</div>
-            <div class="schedule__days">29</div>
-            <div class="schedule__days">30</div>
-        </div>
+
+        <!-- Calendario -->
+    <div class="schedule">
+
+    <div class="schedule__days" data-day="1">
+        <div class="day-number">1</div>
+        <div class="events"></div>
     </div>
-    <script>
-        const menuToggle = document.getElementById("menu-toggle")
-        console.log(menuToggle)
-        const mainNav = document.getElementById("main-nav")
-        console.log(mainNav)
 
-        //evento click del boton//
-        menuToggle.addEventListener('click', function(){
-            mainNav.classList.toggle("main-nav__open")})
+    <div class="schedule__days" data-day="2">
+        <div class="day-number">2</div>
+        <div class="events"></div>
+    </div>
 
-        
-    </script>
+    <div class="schedule__days" data-day="3">
+        <div class="day-number">3</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="4">
+        <div class="day-number">4</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="5">
+        <div class="day-number">5</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="6">
+        <div class="day-number">6</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="7">
+        <div class="day-number">7</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="8">
+        <div class="day-number">8</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="9">
+        <div class="day-number">9</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="10">
+        <div class="day-number">10</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="11">
+        <div class="day-number">11</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="12">
+        <div class="day-number">12</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="13">
+        <div class="day-number">13</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="14">
+        <div class="day-number">14</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="15">
+        <div class="day-number">15</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="16">
+        <div class="day-number">16</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="17">
+        <div class="day-number">17</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="18">
+        <div class="day-number">18</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="19">
+        <div class="day-number">19</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="20">
+        <div class="day-number">20</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="21">
+        <div class="day-number">21</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="22">
+        <div class="day-number">22</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="23">
+        <div class="day-number">23</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="24">
+        <div class="day-number">24</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="25">
+        <div class="day-number">25</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="26">
+        <div class="day-number">26</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="27">
+        <div class="day-number">27</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="28">
+        <div class="day-number">28</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="29">
+        <div class="day-number">29</div>
+        <div class="events"></div>
+    </div>
+
+    <div class="schedule__days" data-day="30">
+        <div class="day-number">30</div>
+        <div class="events"></div>
+    </div>
+
+</div>
+
+
+    </section>
+
+</main>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+    // Menú responsive
+    const menuToggle = document.getElementById("menu-toggle");
+    const mainNav = document.getElementById("main-nav");
+
+    menuToggle.addEventListener("click", function () {
+        mainNav.classList.toggle("main-nav__open");
+    });
+
+    // Agregar eventos
+    const addEventBtn = document.getElementById("addEvent");
+
+    addEventBtn.addEventListener("click", function () {
+
+        const day = document.getElementById("eventDay").value;
+        const title = document.getElementById("eventTitle").value.trim();
+        const time = document.getElementById("eventTime").value;
+        const description = document.getElementById("eventDescription").value.trim();
+        const icon = document.getElementById("eventIcon").value;
+
+        if (!day || !title) {
+            alert("Debe ingresar un día y un nombre");
+            return;
+        }
+
+        const container = document.querySelector(
+            `[data-day="${day}"] .events`
+        );
+
+        const event = document.createElement("div");
+        event.classList.add("event");
+
+        event.innerHTML = `
+            <div class="event-title">
+                ${icon} ${title}
+            </div>
+
+            <div class="event-time">
+                ${time || "Sin hora"}
+            </div>
+
+            <div class="event-description">
+                ${description}
+            </div>
+        `;
+
+        container.appendChild(event);
+
+        document.getElementById("eventDay").value = "";
+        document.getElementById("eventTitle").value = "";
+        document.getElementById("eventTime").value = "";
+        document.getElementById("eventDescription").value = "";
+    });
+
+</script>
+
+
 </body>
+
 </html>
